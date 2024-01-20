@@ -1,0 +1,22 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "name": "A",
+      "number": "1",
+      "description": "A"
+    },
+    {
+      "id": 3,
+      "name": "C",
+      "number": "3",
+      "description": "C"
+    },
+    {
+      "id": 5,
+      "name": "dsadas",
+      "number": "3",
+      "description": "dsadsadsa"
+    }
+  ]
+}

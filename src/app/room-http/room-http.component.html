@@ -1,0 +1,18 @@
+<form class="container"  >
+    <label for="name" class="label">Name:</label>
+    <input type="text" id="name" #name name="name" class="input-box"><br>
+
+    <label for="number" class="label">Room number:</label>
+    <input type="number" id="number" #number name="number" class="input-box"><br>
+
+    <label for="description" class="label">Description:</label>
+    <textarea id="description" rows="4" #description name="description" class="text-area"></textarea>
+
+    <button type="submit" (click)="addRoom(name, number, description)" class="button">SUBMIT</button>
+</form>
+
+
+<span *ngFor="let room of rooms">
+    {{room.name}}
+    <button type="submit" (click)="deleteRoom(room.name)">DELETE</button>
+</span>

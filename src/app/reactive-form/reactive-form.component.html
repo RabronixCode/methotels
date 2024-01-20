@@ -1,0 +1,32 @@
+<form [formGroup]="addRoomForm" (ngSubmit)="onSubmit()" class="form">
+    <label for="name" class="label">Name:</label>
+    <input type="text" formControlName="name"><br>
+    <span *ngIf="name?.touched && name && name.invalid" class="error">Mora preko 6 karaktera</span><br>
+
+    <label for="number" class="label">Room number:</label>
+    <input type="number" formControlName="number"><br>
+    <span *ngIf="number?.touched && number && number.invalid" class="error">Mora broj veci od 0</span><br>
+
+    <label for="price" class="label">Price:</label>
+    <input type="text" id="price" formControlName="price"/>
+    
+
+    <div class="selectors">
+        <div>
+            <input type="checkbox" formControlName="aircondition" (click)="changePriceAc(50)" class="checkbox">
+            <span>Klima</span>
+        </div>
+        <div>
+            <input type="checkbox" formControlName="minibar" (click)="changePriceMb(20)" class="checkbox">
+            <span>Mini bar</span>
+        </div>
+        <div>
+            <input type="checkbox" formControlName="sauna" (click)="changePriceS(10)" class="checkbox">
+            <span>Sauna</span>
+        </div>
+    </div>
+    <br>
+    <span *ngIf="ac || mb || s" class="update">Ovaj odabir ce promeniti cenu za: {{ newPrice }}e</span><br>
+
+    <button type="submit" [disabled]="!addRoomForm.valid" class="button">Submit</button>
+</form>

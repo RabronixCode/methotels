@@ -1,0 +1,14 @@
+<div class="navbar">
+    <button (click)="showForm()">DODAJ SOBU</button>
+    <button routerLink="/suggestions">PREPORUKA</button>
+    <button (click)="showRecommendation()">PONUDA</button>
+    <button (click)="navigateToAboutUs()">O NAMA</button>
+    <button (click)="navigateToRForm()">REACTIVE FORM</button>
+    <button (click)="navigateToDI()">PRICE</button>
+    <button (click)="navigateToHttp()">ROOMS</button>
+</div>    
+
+
+<app-form *ngIf="form" (copyRooms)="copyRooms($event)"></app-form>
+
+<app-recommendation *ngIf="recommendation" [rooms]="rooms"></app-recommendation>

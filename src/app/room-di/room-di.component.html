@@ -1,0 +1,9 @@
+
+    <span *ngFor="let r of rooms; let i = index"><div class="box">Room name: {{r.name}}<br>Room number: {{r.number}}<br> Room price: {{r.price}}<br>
+        Broj noci: <input type="text" id="nights" #nights name="nights" class="input"><br>
+        <button (click)="getPrice(nights, r.price)" class="button">Izracunaj cenu</button>
+        <br><br>
+        
+    </div>
+    </span>
+    <span *ngIf="calculatedPrice" class="calc">Cena je: {{calculatedPrice}}</span>
